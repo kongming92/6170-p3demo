@@ -1,0 +1,11 @@
+<div id="signin">
+  <h1>Sign in</h1>
+  {{#if error}}
+    <div class="error">{{error}}</div>
+  {{/if}}
+  <form id="signin-form">
+    <div>Username: <input type="text" name="username" required /></div>
+    <div>Password: <input type="password" name="password" required /></div>
+    <input type="submit" />
+  </form>
+</div>

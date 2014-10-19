@@ -1,0 +1,8 @@
+#!/usr/bin/env node
+var debug = require('debug')('illumio-challenge');
+var app = require('../app');
+
+var port = process.env.OPENSHIFT_NODEJS_PORT;
+var ip = process.env.OPENSHIFT_NODEJS_IP;
+
+app.listen(port || 3000, ip);
