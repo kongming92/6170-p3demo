@@ -1,10 +1,3 @@
-/*
-  This file is generated -- do not modify!
-  You don't need to understand this file. Instead look at the templates found i
-
-  For more information visit http://handlebarsjs.com/ and http://handlebarsjs.c
-*/
-
 (function() {
   var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
 templates['edit-secret'] = template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
@@ -16,7 +9,7 @@ templates['edit-secret'] = template({"compiler":[6,">= 2.0.0-beta.1"],"main":fun
     + "\" />\n  <button class=\"edit-button\">Edit</button>\n  <button class=\"reset-button\">Reset</button>\n</div>\n";
 },"useData":true});
 templates['index'] = template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-  return "<div id=\"homepage\">\n  <h1>Welcome to Illumio Secrets!</h1>\n  <p>You must be signed in to continue.</p>\n  <button id=\"signin-btn\">Sign in</button>\n  <button id=\"register-btn\">Register</button>\n</div>\n";
+  return "<div id=\"homepage\">\n  <h1>Welcome to 6.170 Secrets!</h1>\n  <p>You must be signed in to continue.</p>\n  <button id=\"signin-btn\">Sign in</button>\n  <button id=\"register-btn\">Register</button>\n</div>\n";
   },"useData":true});
 templates['register'] = template({"1":function(depth0,helpers,partials,data) {
   var helper, functionType="function", helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
@@ -31,11 +24,9 @@ templates['register'] = template({"1":function(depth0,helpers,partials,data) {
 },"useData":true});
 templates['secret'] = template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
   var helper, functionType="function", helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
-  return "<div class=\"secret\" data-secret-id="
-    + escapeExpression(((helper = (helper = helpers._id || (depth0 != null ? depth0._id : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"_id","hash":{},"data":data}) : helper)))
-    + ">\n  <p>"
+  return "<!--\n  Write a template for a SINGLE secret\n  Each secret has two fields: _id and content\n-->\n<div class=\"secret\">\n  <p>"
     + escapeExpression(((helper = (helper = helpers.content || (depth0 != null ? depth0.content : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"content","hash":{},"data":data}) : helper)))
-    + "</p>\n  <a href=\"#\" class=\"edit-secret\">Edit</a>\n  <a href=\"#\" class=\"delete-secret\">Delete</a>\n</div>\n";
+    + "</p>\n</div>\n";
 },"useData":true});
 templates['secrets'] = template({"1":function(depth0,helpers,partials,data) {
   var stack1, buffer = "";
@@ -43,9 +34,9 @@ templates['secrets'] = template({"1":function(depth0,helpers,partials,data) {
   if (stack1 != null) { buffer += stack1; }
   return buffer;
 },"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-  var stack1, lambda=this.lambda, escapeExpression=this.escapeExpression, buffer = "<div id=\"secrets\">\n  <p>Welcome, "
+  var stack1, lambda=this.lambda, escapeExpression=this.escapeExpression, buffer = "<!--\n  Write a template for the entire secrets page, which will be inserted into $('#main-container').\n  You should display a list of secrets by making calls to the secrets partial.\n-->\n<div id=\"secrets\">\n  <p>Welcome, "
     + escapeExpression(lambda(((stack1 = (depth0 != null ? depth0.currentUser : depth0)) != null ? stack1.username : stack1), depth0))
-    + " (<a href=\"#\" id=\"logout-link\">logout</a>)</p>\n  <h1>Add New Secret</h1>\n  <div>\n    <div class=\"error\"></div>\n    <input type=\"text\" id=\"new-secret-input\" />\n    <button id=\"submit-new-secret\">Add</button>\n  </div>\n  <h1>Your Secrets</h1>\n";
+    + " (<a href=\"#\" id=\"logout-link\">logout</a>)</p>\n  <h1>Add New Secret</h1>\n  <!-- Don't worry about adding for now; we'll take care of that later -->\n\n  <h1>Your Secrets</h1>\n  <!-- YOUR CODE HERE -->\n";
   stack1 = helpers.each.call(depth0, (depth0 != null ? depth0.secrets : depth0), {"name":"each","hash":{},"fn":this.program(1, data),"inverse":this.noop,"data":data});
   if (stack1 != null) { buffer += stack1; }
   return buffer + "</div>\n";
@@ -60,11 +51,5 @@ templates['signin'] = template({"1":function(depth0,helpers,partials,data) {
   stack1 = helpers['if'].call(depth0, (depth0 != null ? depth0.error : depth0), {"name":"if","hash":{},"fn":this.program(1, data),"inverse":this.noop,"data":data});
   if (stack1 != null) { buffer += stack1; }
   return buffer + "  <form id=\"signin-form\">\n    <div>Username: <input type=\"text\" name=\"username\" required /></div>\n    <div>Password: <input type=\"password\" name=\"password\" required /></div>\n    <input type=\"submit\" />\n  </form>\n</div>\n";
-},"useData":true});
-templates['test'] = template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
-  var helper, functionType="function", helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
-  return "<div>\n  <p>"
-    + escapeExpression(((helper = (helper = helpers.test || (depth0 != null ? depth0.test : depth0)) != null ? helper : helperMissing),(typeof helper === functionType ? helper.call(depth0, {"name":"test","hash":{},"data":data}) : helper)))
-    + "</p>\n  </div>\n";
 },"useData":true});
 })();
